@@ -1,4 +1,4 @@
-# Implementing and testing a binary heap
+# Implementing and testing a binary heap (Non implemente)
 
 A [*binary heap*](https://en.wikipedia.org/wiki/Binary_heap) is a data structure that contains comparable objects and it is able to efficiently return the lowest element.
 This data structure relies on a binary tree to keep the insertion and deletion operations efficient. It is the base of the [*Heapsort* algorithm](https://en.wikipedia.org/wiki/Heapsort).

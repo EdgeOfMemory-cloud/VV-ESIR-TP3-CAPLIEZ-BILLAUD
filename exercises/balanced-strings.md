@@ -24,5 +24,23 @@ Use the coverage criteria studied in classes as follows:
 Write below the actions you took on each step and the results you obtained.
 Use the project in [tp3-balanced-strings](../code/tp3-balanced-strings) to complete this exercise.
 
-## Answer
+## Answer (Louis-Gabriel CAPLIEZ et Valère BILLAUD, ESIR2 Spé INFO, option SI)
 
+Pour l’exercice *Balanced String* nous avont découpé l’ensemble d’entré en plusieurs sous ensembles :
+- L’ensemble des chaînes de caractères qui n’ont pas autant d’ouvert ‘‘(‘’ (Resp : ‘’[‘’ et ‘’{‘’) que de fermé ‘’)’’ (Resp : ‘’]’’ et ‘’}’’).
+- L’ensemble des String qui ont autant d’ouvert que de fermé et commencent par un fermé ‘’)’’ ou ‘’]’’ ou ‘’}’’. 
+- L’ensemble des String qui ont autant d’ouvert que de fermé, qui commencent et terminent par un ouvert.
+- L’ensemble des String qui ont autant d’ouvert que de fermé, qui commencent et terminent par un ouvert et un fermé. De plus ils possèdent au moins un ouvert suivi (modulo des caractères alphanumériques différents de ‘’()[]{}’’  ) d’un fermé de type différent (ex : ‘’( ]’’, ‘‘[ }’’, ‘’{ )’’).
+- L’ensemble des String qui ont autant d’ouvert que de fermé, qui commencent et terminent par un ouvert et un fermé. De plus ils ne possèdent pas un ouvert suivi (modulo des caractères alphanumériques différents de ‘’()[]{}’’  ) d’un fermé de type différent (ex : ‘’( ]’’, ‘‘[ }’’, ‘’{ )’’).
+
+Après avoir utilisé Jacoco nous avons remarqué que des instructions ainsi que des branches n’étaient pas testés. 
+- Comme pour nous le ‘(‘, ‘[‘ et ‘{‘ ont des rôles symétriques nous avions oublié de tester le fait d’avoir un fermé ‘]’ et ‘}’ alors qu’il n’y avait rien d’ouvert.
+- De plus nous avions oublié de tester les exemples avec des caractères différents entre les parenthèses.
+
+![exo3_coverage](exo3_coverage.png)
+
+Après avoir rajouté les tests expliqués ci-dessus, nous obtenons une couverture de 100 %.
+
+![exo3_pit](exo3_pit.png)
+
+A l’aide de PIT nous avons pu déterminer la confiance que nous pouvons porter à nos tests. Sur 15 mutants créés, tous sont morts, ce qui nous permet de dire que nous avons une confiance établie en nos testes.

@@ -1,3 +1,8 @@
+/**
+ * @author Louis-Gabriel CAPLIEZ (EdgeOfMemory-cloud), Valere BILLAUD, ESIR 2 Spe INFO, option SI, Groupe 1
+ * @date 20221109
+ */
+
 package fr.istic.vv;
 
 import org.junit.jupiter.api.Test;
@@ -8,28 +13,63 @@ import static org.junit.jupiter.api.Assertions.*;
 class StringUtilsTest {
 
 	@Test
-	public void testFloat() {
-		assertEquals(3 * 0.4, 1.2, 0.1);
+	public void pasMemeNbOuvrantFermant() {
+		String dataToTest= "(()))";
+		assertEquals(isBalanced(dataToTest), false);
+	}
+	
+	
+	// Ajoute pour instruction manquee.
+	@Test
+	public void crochFerm(){
+		String dataToTest= "]";
+		assertEquals(isBalanced(dataToTest), false);
+	}
+	
+	// Ajoute pour instruction manquee.
+	@Test
+	public void accoladeFerm(){
+		String dataToTest= "}";
+		assertEquals(isBalanced(dataToTest), false);
 	}
 	
 	@Test
-	public void testSameTrue() {
-        String s1 = new String("Aegis");
-        String s2 = s1;
-        assertEquals(s1, s2); // Vaut true
-    }
+	public void fermantAuDebut(){
+		String dataToTest= ")(()";
+		assertEquals(isBalanced(dataToTest), false);
+	}
 	
 	@Test
-	public void testSameFalse() {
-        String s1 = new String("Aegis");
-        String s2 = new String("Aegis");
-        assertNotSame(s1, s2); // Ne passe pas car s1 ne référence pas le même objet que s1.
-    } 
-
+	public void ouvrantALaFin(){
+		String dataToTest= "())(";
+		assertEquals(isBalanced(dataToTest), false);
+	}
+	
 	@Test
-    public void testEqualsStillTrue() {
-        String s1 = new String("Aegis");
-        String s2 = new String("Aegis");
-        assertEquals(s1, s2); // Passe car le contenu de l'objet pointé par s1 est le même que celui pointé par s2.
-    }
+	public void ouvrantEtFermantDifferent(){
+		String dataToTest= "({][}}";
+		assertEquals(isBalanced(dataToTest), false);
+	}
+	
+	@Test
+	public void chaineEquilibree(){
+		String dataToTest= "([]{()}[])";
+		assertEquals(isBalanced(dataToTest), true);
+	}
+	
+	// Ajoute pour branche manquee.
+	@Test
+	public void test1(){
+		String dataToTest= "(e)";
+		assertEquals(isBalanced(dataToTest), true);
+	}
+	
+	// Ajoute pour branche manquee.
+	@Test
+	public void test2(){
+		String dataToTest= "[e)";
+		assertEquals(isBalanced(dataToTest), false);
+	}
+
+	
 }

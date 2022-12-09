@@ -1,3 +1,8 @@
+/**
+ * @author Louis-Gabriel CAPLIEZ (EdgeOfMemory-cloud), Valere BILLAUD, ESIR 2 Spe INFO, option SI, Groupe 1
+ * @date 20221109
+ */
+
 package fr.istic.vv;
 
 import org.junit.jupiter.api.Test;

@@ -1,4 +1,4 @@
-# Mocks to the rescue
+# Mocks to the rescue (Passage à Mockito realise mais des tests sont manquants pour une couverture complete.)
 
 The classes `SSLSocket`, `TLSProtocol` and `TLSSocketFactory` are included in the `sockets` package of the [`tp3-ssl`](../code/tp3-ssl) project.
 
